@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border border-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="form.html">Form <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="table.html"
+                      >Frameworks Table<span class="sr-only">(current)</span></a
+                    >
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="details.html"
+                      >language-category<span class="sr-only">(current)</span></a
+                    >
+                  </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5" >
+        <h3>Create some form using form-group bootstrap class.</h3>
+        
+        <form class="">
+            
+            <div class="form-row border m-5 p-5">
+                <h2>Personal Information Form</h2>
+            <!-- Name -->
+            <div class="form-group col-12">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            
+            <!-- Email -->
+            <div class="form-group col-12">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            
+            <!-- Age -->
+            <div class="form-group col-12">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" placeholder="Enter your age">
+            </div>
+            
+            <!-- Gender -->
+            <div class="form-group col-md-6">
+                <label>Gender</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+            </div>
+            
+            <!-- Religion -->
+            <div class="form-group col-md-6">
+                <label for="religion">Religion</label>
+                <input type="text" class="form-control" id="religion" placeholder="Enter your religion">
+            </div>
+            
+            <!-- Birthday -->
+            <div class="form-group col-12">
+                <label for="birthday">Birthday</label>
+                <input type="date" class="form-control" id="birthday">
+            </div>
+            
+            <!-- Current Address -->
+            <div class="form-group col-12">
+                <label for="currentAddress">Current Address</label>
+                <input type="text" class="form-control" id="currentAddress" placeholder="Enter your current address">
+            </div>
+            
+            <!-- Phone -->
+            <div class="form-group col-12">
+                <label for="phone">Phone</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+            </div>
+            
+            <!-- City -->
+            <div class="form-group col-12">
+                <label for="city">City</label>
+                <select class="form-control" id="city">
+                    <option>Choose...</option>
+                    <option>Dhaka</option>
+                    <option>Khulna</option>
+                    <option>jossore</option>
+                    <option>Barisal</option>
+                    <option>Gazipur</option>
+                </select>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="btn bg-warning col-12">Submit</button>
+        </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

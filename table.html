@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Frameworks and Libraries</title>
+    <style>
+      body {
+        position: relative;
+        
+      }
+
+      .progress {
+        height: 30px;
+        margin-bottom: 20px;
+      }
+
+      .progress-bar {
+        line-height: 30px;
+      }
+
+      /* Styling for table rows */
+      .table tbody tr {
+        cursor: pointer;
+      }
+
+      /* Default color for active rows */
+      .table tbody tr.active-row {
+        background-color: #d4edda;
+        color: #155724;
+      }
+    </style>
+  </head>
+  <body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border border-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="about.html">About Us <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="form.html">Form <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="table.html"
+                  >Frameworks Table<span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="details.html"
+                  >language-category<span class="sr-only">(current)</span></a
+                >
+              </li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container mt-5" id="table-section">
+        <h4>Task : Progress Bar</h4>
+      <!-- Progress Bar -->
+      <div class="progress">
+        
+        <div
+          class="progress-bar bg-success"
+          role="progressbar"
+          style="width: 0%"
+          id="progress-bar"
+        >
+          0%
+        </div>
+      </div>
+
+      <!-- Table -->
+       <h4>Task: Table</h4>
+       <h5 class="bg-warning">Click Table Item Progress Bar Working</h5>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Framework/Library</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr onclick="updateProgressBar(1, this)">
+            <th scope="row">1</th>
+            <td>React</td>
+            <td>Library</td>
+            <td>A JavaScript library for building user interfaces, maintained by Facebook.</td>
+          </tr>
+          <tr onclick="updateProgressBar(2, this)">
+            <th scope="row">2</th>
+            <td>Angular</td>
+            <td>Framework</td>
+            <td>A TypeScript-based web application framework developed by Google.</td>
+          </tr>
+          <tr onclick="updateProgressBar(3, this)">
+            <th scope="row">3</th>
+            <td>Vue.js</td>
+            <td>Framework</td>
+            <td>A progressive JavaScript framework for building UIs, particularly single-page applications.</td>
+          </tr>
+          <tr onclick="updateProgressBar(4, this)">
+            <th scope="row">4</th>
+            <td>Bootstrap</td>
+            <td>Framework</td>
+            <td>The most popular CSS framework for developing responsive, mobile-first websites.</td>
+          </tr>
+          <tr onclick="updateProgressBar(5, this)">
+            <th scope="row">5</th>
+            <td>jQuery</td>
+            <td>Library</td>
+            <td>A fast, small, and feature-rich JavaScript library.</td>
+          </tr>
+          <tr onclick="updateProgressBar(6, this)">
+            <th scope="row">6</th>
+            <td>Django</td>
+            <td>Framework</td>
+            <td>A high-level Python web framework that encourages rapid development.</td>
+          </tr>
+          <tr onclick="updateProgressBar(7, this)">
+            <th scope="row">7</th>
+            <td>Laravel</td>
+            <td>Framework</td>
+            <td>A PHP framework for web artisans, known for its elegant syntax and MVC architecture.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Function to update progress bar and change row color
+      function updateProgressBar(index, row) {
+        // Update progress bar
+        var percentage = (index / 7) * 100;
+        var progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = percentage + '%';
+        progressBar.textContent = Math.round(percentage) + '%';
+
+        // Remove active class from all rows
+        var rows = document.querySelectorAll('tbody tr');
+        rows.forEach(function (r) {
+          r.classList.remove('active-row');
+        });
+
+        // Add active class to the clicked row
+        row.classList.add('active-row');
+      }
+    </script>
+  </body>
+</html>

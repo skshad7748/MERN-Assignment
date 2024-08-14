@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Assignment 1</title>
+
+    <style>
+      .list-group-item.active {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      .detail-box {
+        border: 1px solid #dee2e6;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .img-logo{
+        height: 50px;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light border border-dark">
+      <a class="navbar-brand" href="#"><img src="./assets/img/logo (2).png" alt="logo" class="img-thumbnail img-logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="form.html">Form <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="table.html"
+                    >Frameworks Table<span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="details.html"
+                    >language-category<span class="sr-only">(current)</span></a
+                  >
+                </li>
+          </ul>
+      </div>
+  </nav>
+  <h4 class="text-dark">Task : List Group</h4>
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Left Side Details Box -->
+        <div class="col-md-4 text-dark">
+          <div id="detail-box" class="detail-box">
+            <h5>Details</h5>
+            <p>Select a list item to see details here.</p>
+          </div>
+        </div>
+
+        <!-- Right Side Buttons and List Group -->
+        <div class="col-md-8">
+          <!-- Buttons -->
+          <div class="mb-4">
+            <h4 class="text-dark">Task : Button</h4>
+            <button class="btn btn-primary" onclick="activateListItem(1)">Python</button>
+            <button class="btn btn-secondary" onclick="activateListItem(2)">Java</button>
+            <button class="btn btn-success" onclick="activateListItem(3)">JavaScript</button>
+            <button class="btn btn-danger" onclick="activateListItem(4)">C++</button>
+            <button class="btn btn-warning" onclick="activateListItem(5)">Ruby</button>
+            <button class="btn btn-info" onclick="activateListItem(6)">C#</button>
+            <button class="btn btn-light" onclick="activateListItem(7)">PHP</button>
+            <button class="btn btn-dark" onclick="activateListItem(8)">Swift</button>
+            <button class="btn btn-outline-primary" onclick="activateListItem(9)">Go</button>
+            <button class="btn btn-outline-secondary" onclick="activateListItem(10)">Kotlin</button>
+          </div>
+
+          <!-- List Group -->
+          <div class="list-group" id="list-group">
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(1)"
+            >
+              Python
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(2)"
+            >
+              Java
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(3)"
+            >
+              JavaScript
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(4)"
+            >
+              C++
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(5)"
+            >
+              Ruby
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(6)"
+            >
+              C#
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(7)"
+            >
+              PHP
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(8)"
+            >
+              Swift
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(9)"
+            >
+              Go
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              onclick="showDetails(10)"
+            >
+              Kotlin
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      function activateListItem(index) {
+        const listItems = document.querySelectorAll('#list-group .list-group-item');
+        listItems.forEach((item, i) => {
+          item.classList.remove('active');
+          if (i === index - 1) {
+            item.classList.add('active');
+            showDetails(index);
+          }
+        });
+      }
+
+      function showDetails(index) {
+        const details = [
+          'Python: A versatile language used in web development, AI, data science, and more.',
+          'Java: A powerful, platform-independent language commonly used in enterprise and mobile applications.',
+          'JavaScript: The backbone of web development, enabling dynamic and interactive web pages.',
+          'C++: A high-performance language often used in systems programming, games, and real-time applications.',
+          'Ruby: Known for its simplicity and productivity, Ruby is often used in web development, especially with Rails.',
+          'C#: A language developed by Microsoft, commonly used in desktop applications, games, and enterprise software.',
+          'PHP: A popular server-side scripting language used to develop dynamic web content.',
+          'Swift: Apple\'s programming language for iOS and macOS development, known for its performance and safety features.',
+          'Go: A statically typed language developed by Google, known for its simplicity and efficiency in system and server-side applications.',
+          'Kotlin: A modern programming language used primarily for Android development, fully interoperable with Java.'
+        ];
+        document.getElementById('detail-box').innerHTML = `
+          <h5>Details</h5>
+          <p>${details[index - 1]}</p>
+        `;
+      }
+    </script>
+ 
+  </body>
+</html>

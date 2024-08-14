@@ -1,0 +1,14 @@
+
+
+
+.container{
+    background: rgb(250, 244, 244);
+}
+
+
+
+.card-container{
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+}
